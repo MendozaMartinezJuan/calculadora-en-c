@@ -1,6 +1,6 @@
-
 #include <stdio.h>
 #include <locale.h>
+#include <stdlib.h>
 
 int main(){
     setlocale(LC_ALL, "");
@@ -17,17 +17,22 @@ int main(){
 
     struct Fraccion fraccion1, fraccion2, resultado;
 
-    printf("\tBienvenido a la calculadora\n");
-    printf("1.- Suma\n2.- Resta\n3.- Multiplicacion\n4.- Division\n5.- Fracciones\n6.- Salir\n");
+    char menu[] = "\t    Menu Principal\n1.- Suma\n2.- Resta\n3.- Multiplicacion\n4.- Division\n5.- Fracciones\n6.- Salir\n";
+
+    printf("\tBienvenido a la calculadora.");
+    printf("\n%s", menu);
 
     do {
         printf("\nTeclee una opcion valida: ");
         scanf("%d", &option);
+        system("clear");
 
         switch(option){
 
             case 1:
-                printf("Seleccionaste Suma\n");
+                printf("----------------------------------------------------");
+                printf("\tSeleccionaste Suma   ");
+                printf("----------------------------------------------------\n");
                 printf("Ingresa el primer numero: ");
                 scanf("%f",&num1);
                 printf("\nIngresa el segundo numero: ");
@@ -37,7 +42,9 @@ int main(){
                 break;
 
             case 2:
-                printf("Seleccionaste Resta\n");
+                printf("----------------------------------------------------");
+                printf("\tSeleccionaste Resta   ");
+                printf("----------------------------------------------------\n");
                 printf("Ingresa el primer numero: ");
                 scanf("%f",&num1);
                 printf("\nIngresa el segundo numero: ");
@@ -47,7 +54,9 @@ int main(){
                 break;
 
             case 3:
-                printf("Seleccionaste Multiplicacion\n");
+                printf("----------------------------------------------------");
+                printf("\tSeleccionaste Multiplicacion   ");
+                printf("----------------------------------------------------\n");
                 printf("Ingresa el primer numero: ");
                 scanf("%f",&num1);
                 printf("\nIngresa el segundo numero: ");
@@ -57,32 +66,39 @@ int main(){
                 break;
 
             case 4:
-                printf("Seleccionaste Division\n");
+                printf("----------------------------------------------------");
+                printf("\tSeleccionaste Division   ");
+                printf("----------------------------------------------------\n");
                 printf("Ingresa el primer numero: ");
                 scanf("%f",&num1);
-                printf("\nIngresa el segundo numero: ");
+                printf("Ingresa el segundo numero: ");
                 scanf("%f",&num2);
                 if(num2 != 0){
                     result = num1 / num2;
                     printf("El resultado es: %.2f",result);
+                    system("clear");
+                    printf("\n%s", menu);
                 }else{
                     printf("Error: Division por cero no permitida.");
+                    printf("\n%s", menu);
                 }
                 break;
 
             case 5:
-                printf("Seleccionaste Fracciones\n");
+                printf("----------------------------------------------------");
+                printf("\tSeleccionaste Fracciones   ");
+                printf("----------------------------------------------------\n");
 
                 do {
-                    printf("\n1.- Suma\n2.- Resta\n3.- Multiplicacion\n4.- Division\n5.- Salir\n");
+                    char menuFracction[] = "\t\tMenu Fracciones\n1.- Suma\n2.- Resta\n3.- Multiplicacion\n4.- Division\n5.- Salir\n";
+                    printf("%s", menuFracction);
                     printf("Teclee una opcion valida: ");
-
                     scanf("%d", &fraccionOption);
 
                     switch(fraccionOption){
 
                         case 1:
-                            printf("\nSuma de Fracciones\n");
+                            printf("\tSuma de Fracciones\n");
                             printf("\nIngresa el numerador de la primera fracción: ");
                             scanf("%d",&fraccion1.numerador);
                             printf("\nIngresa el denominador de la primera fraccion: ");
@@ -133,23 +149,32 @@ int main(){
                             break;
 
                         case 2:
-                            printf("\nResta de Fracciones\n");
+                            printf("----------------------------------------------------");
+                            printf("\tResta de Fracciones");
+                            printf("----------------------------------------------------\n");
                             break;
 
                         case 3:
-                            printf("\nMultiplicacion de Fracciones\n");
+                            printf("----------------------------------------------------");
+                            printf("\tMultiplicacion de Fracciones");
+                            printf("----------------------------------------------------\n");
                             break;
 
                         case 4:
-                            printf("\nDivision de Fracciones\n");
+                            printf("----------------------------------------------------");
+                            printf("\tDivisión de Fracciones");
+                            printf("----------------------------------------------------\n");   
                             break;
 
                         case 5:
-                            printf("\nRegresando al menu principal...\n");
+                            printf("----------------------------------------------------");
+                            printf("\tRegresando al menu principal...");
+                            printf("----------------------------------------------------\n");
                             break;
 
                         default:
                             printf("\nOpcion no valida\n");
+                            printf("%s", menuFracction);
                     }
 
                 } while(fraccionOption != salirFraccion);
@@ -157,11 +182,16 @@ int main(){
                 break;
 
             case 6:
-                printf("\nSaliendo de la calculadora...\n");
+                printf("----------------------------------------------------");
+                printf("\tSaliendo de la calculadora...");
+                printf("----------------------------------------------------\n");
                 break;
 
             default:
-                printf("\nOpcion no valida\n");
+                printf("----------------------------------------------------");
+                printf("\tOpcion no valida\n\n");
+                printf("----------------------------------------------------\n");
+                printf("%s", menu);
         }
 
     } while(option != salirPrincipal);
