@@ -29,7 +29,7 @@ int main(){
                         "Ingresa el numerador de la segunda fraccióm: ",     //posicion 2 
                         "Ingresa el denominador de la segunda fracción: ",   //posicion 3
                         "Ingresa el primer numero: ",                        //posicion 4
-                        "Ingresa el segundo numero: ",                        //posicion 5
+                        "Ingresa el segundo numero: ",                       //posicion 5
                         "El resultado es: "
                         }; 
     //----------------------Bienvenida------------------------
@@ -52,7 +52,7 @@ int main(){
                 printf("%s", questions[5]);
                 scanf("%f",&num2);
                 result = num1 + num2;
-                printf("%s %.2f" , questions[6],result);
+                printf("%.2f + %.2f =  %.2f" ,num1, num2, result);
                 pausar();
                 system("clear");
                 printf("%s", menu);
@@ -67,7 +67,7 @@ int main(){
                 printf("%s", questions[5]);
                 scanf("%f",&num2);
                 result = num1 - num2;
-                printf("%s %.2f" , questions[6],result);
+                printf("%.2f - %.2f = %.2f" , num1, num2, result);
                 pausar();
                 system("clear");
                 printf("%s", menu);
@@ -82,12 +82,14 @@ int main(){
                 printf("%s", questions[5]);
                 scanf("%f",&num2);
                 result = num1 * num2;
-                printf("El resultado es: %.2f",result);
+                printf("%.2f * %.2f = %.2f" , num1, num2, result);
+                pausar();
+                system("clear");
                 break;
 
             case 4:
                 printf("----------------------------------------------------");
-                printf("\tSeleccionaste Division   ");
+                printf("\tSeleccionaste División   ");
                 printf("----------------------------------------------------\n");
                 printf("%s", questions[4]);
                 scanf("%f",&num1);
@@ -95,11 +97,14 @@ int main(){
                 scanf("%f",&num2);
                 if(num2 != 0){
                     result = num1 / num2;
-                    printf("El resultado es: %.2f",result);
+                    printf("%.2f / %.2f = %.2f" , num1, num2, result);
+                    pausar();
                     system("clear");
                     printf("\n%s", menu);
                 }else{
                     printf("Error: Division por cero no permitida.");
+                    pausar();
+                    system("clear");
                     printf("\n%s", menu);
                 }
                 break;
@@ -119,9 +124,9 @@ int main(){
 
                         case 1:
                             printf("\tSuma de Fracciones\n");
-                            printf("\nIngresa el numerador de la primera fracción: ");
+                            printf("%s", question[0]);
                             scanf("%d",&fraccion1.numerador);
-                            printf("\nIngresa el denominador de la primera fraccion: ");
+                            printf("%s", questions[1]);
                             scanf("%d",&fraccion1.denominador);
                             printf("\nTu primera fraccion es: %d/%d", fraccion1.numerador, fraccion1.denominador);
                             printf("\nIngresa el numerador de la segunda fracción: ");
@@ -283,7 +288,6 @@ int main(){
                 printf("----------------------------------------------------\n");
                 printf("%s", menu);
                 system("clear");
-        }printf("Ingresa el denominador de la segunda fracción: ");
 
     } while(option != salirPrincipal);
 
